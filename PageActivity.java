@@ -31,6 +31,13 @@ public class PageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page);
 
+        
+        //receive data
+        Intent intent = getIntent();
+        int image = intent.getExtras().getInt("Thumbnail");
+        //set value
+        img.setImageResource(image);
+        
         viewPager = findViewById(R.id.viewPager);
         swipeAdapter = new SwipeAdapter(PageActivity.this, mData);
         viewPager.setAdapter(swipeAdapter);
